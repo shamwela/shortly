@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Shortly from './components/Shortly'
 import './index.css'
-import App from './App'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Shortly />
   </React.StrictMode>,
   document.getElementById('root')
 )
