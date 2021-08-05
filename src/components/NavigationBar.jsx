@@ -11,13 +11,15 @@ const StyledNavigationBar = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  position: relative;
 `
 
 const LinksWrapper = styled.div`
-  /* position: fixed; */
-  /* top: 10vh; */
-  margin-right: auto;
-  margin-left: auto;
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  right: 0;
+  margin: auto;
   width: 90%;
   min-height: 50vh;
   background-color: var(--dark-violet);
@@ -48,15 +50,15 @@ export default function NavigationBar() {
       <StyledNavigationBar>
         <img src={logo} alt='Shortly Logo' />
         <Menu />
+        <LinksWrapper>
+          <a href='/'>Features</a>
+          <a href='/'>Pricing</a>
+          <a href='/'>Resources</a>
+          <SeparatorLine />
+          <a href='/'>Login</a>
+          <SignUpLink href='/'>Sign Up</SignUpLink>
+        </LinksWrapper>
       </StyledNavigationBar>
-      <LinksWrapper>
-        <a href=''>Features</a>
-        <a href=''>Pricing</a>
-        <a href=''>Resources</a>
-        <SeparatorLine />
-        <a href=''>Login</a>
-        <SignUpLink href=''>Sign Up</SignUpLink>
-      </LinksWrapper>
     </>
   )
 }
