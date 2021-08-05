@@ -11,6 +11,10 @@ const MenuLine = styled.div`
   height: 3px;
   background-color: var(--grayish-violet);
   margin: 5px;
+
+  @media (min-width: 1440px) {
+    display: none;
+  }
 `
 
 export default function Menu() {

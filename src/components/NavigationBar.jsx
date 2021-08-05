@@ -12,11 +12,14 @@ const StyledNavigationBar = styled.nav`
   align-items: center;
   padding: 1rem 2rem;
   position: relative;
+  @media (min-width: 1440px) {
+    padding: 1rem 5rem;
+  }
 `
 
 const LinksWrapper = styled.div`
   position: absolute;
-  top: 10vh;
+  top: 100%;
   left: 0;
   right: 0;
   margin: auto;
@@ -30,10 +33,31 @@ const LinksWrapper = styled.div`
   justify-content: space-evenly;
   align-items: center;
   padding: 0 1rem;
+
+  @media (min-width: 1440px) {
+    position: static;
+    width: 100%;
+    min-height: auto;
+    background-color: transparent;
+    flex-direction: row;
+    padding: 0;
+
+    & > a {
+      padding: 0 1rem;
+      color: var(--dark-violet);
+    }
+
+    a:nth-child(3) {
+      margin-right: auto;
+    }
+  }
 `
 
 const SeparatorLine = styled.hr`
   align-self: stretch;
+  @media (min-width: 1440px) {
+    display: none;
+  }
 `
 
 const SignUpLink = styled.a`
@@ -42,6 +66,10 @@ const SignUpLink = styled.a`
   padding: 0.8em;
   text-align: center;
   align-self: stretch;
+
+  @media (min-width: 1440px) {
+    color: #fff !important;
+  }
 `
 
 export default function NavigationBar() {
