@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import logo from '../assets/logo.svg'
-import '../variables.css'
+import '../styles/variables.css'
 
 const StyledNavigationBar = styled.nav`
   background-color: var(--cyan);
