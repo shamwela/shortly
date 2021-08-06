@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import Menu from './Menu'
+import ButtonLink from './ButtonLink'
 import logo from '../assets/logo.svg'
 import '../styles/variables.css'
-import Menu from './Menu'
 
 const StyledNavigationBar = styled.nav`
   width: 100%;
@@ -12,7 +13,9 @@ const StyledNavigationBar = styled.nav`
   align-items: center;
   padding: 1rem 2rem;
   position: relative;
+
   @media (min-width: 1440px) {
+    height: 20vh;
     padding: 1rem 5rem;
   }
 `
@@ -40,11 +43,11 @@ const LinksWrapper = styled.div`
     min-height: auto;
     background-color: transparent;
     flex-direction: row;
-    padding: 0;
 
     & > a {
-      padding: 0 1rem;
-      color: var(--dark-violet);
+      padding-left: 2rem;
+      padding-right: 2rem;
+      color: var(--very-dark-blue);
     }
 
     a:nth-child(3) {
@@ -55,38 +58,32 @@ const LinksWrapper = styled.div`
 
 const SeparatorLine = styled.hr`
   align-self: stretch;
+
   @media (min-width: 1440px) {
     display: none;
   }
 `
 
-const SignUpLink = styled.a`
-  background-color: var(--cyan);
-  border-radius: 100px;
-  padding: 0.8em;
-  text-align: center;
+const SignUpLink = styled(ButtonLink)`
   align-self: stretch;
-
-  @media (min-width: 1440px) {
-    color: #fff !important;
-  }
 `
 
 export default function NavigationBar() {
   return (
-    <>
-      <StyledNavigationBar>
+    <StyledNavigationBar>
+      {/* Reset line height to center vertically */}
+      <a href='/' style={{ lineHeight: '0' }}>
         <img src={logo} alt='Shortly Logo' />
-        <Menu />
-        <LinksWrapper>
-          <a href='/'>Features</a>
-          <a href='/'>Pricing</a>
-          <a href='/'>Resources</a>
-          <SeparatorLine />
-          <a href='/'>Login</a>
-          <SignUpLink href='/'>Sign Up</SignUpLink>
-        </LinksWrapper>
-      </StyledNavigationBar>
-    </>
+      </a>
+      <Menu />
+      <LinksWrapper>
+        <a href='/'>Features</a>
+        <a href='/'>Pricing</a>
+        <a href='/'>Resources</a>
+        <SeparatorLine />
+        <a href='/'>Login</a>
+        <SignUpLink href='/'>Sign Up</SignUpLink>
+      </LinksWrapper>
+    </StyledNavigationBar>
   )
 }
