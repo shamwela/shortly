@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import '../styles/variables.css'
 
-const StyledMenu = styled.div`
+const StyledMenuIcon = styled.div`
   cursor: pointer;
 `
 
-const MenuLine = styled.div`
+const Line = styled.div`
   width: 25px;
   height: 3px;
   background-color: var(--grayish-violet);
@@ -17,12 +17,12 @@ const MenuLine = styled.div`
   }
 `
 
-export default function Menu() {
+export default function MenuIcon({ onClick }) {
   return (
-    <StyledMenu>
-      <MenuLine />
-      <MenuLine />
-      <MenuLine />
-    </StyledMenu>
+    <StyledMenuIcon onClick={onClick}>
+      <Line />
+      <Line />
+      <Line />
+    </StyledMenuIcon>
   )
 }
