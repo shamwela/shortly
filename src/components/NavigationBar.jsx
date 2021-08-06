@@ -21,13 +21,13 @@ const StyledNavigationBar = styled.nav`
 `
 
 export default function NavigationBar() {
-  const [opened, setOpened] = React.useState(false)
+  const [menuOpened, setMenuOpened] = React.useState(false)
 
   return (
     <StyledNavigationBar>
       <Logo />
-      <MenuIcon onClick={() => setOpened(!opened)} />
-      {opened && <LinksWrapper />}
+      <MenuIcon onClick={() => setMenuOpened(!menuOpened)} />
+      <LinksWrapper menuOpened={menuOpened} />
     </StyledNavigationBar>
   )
 }
