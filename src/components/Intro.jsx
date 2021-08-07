@@ -7,22 +7,24 @@ import ButtonLink from './ButtonLink'
 
 const MainWrapper = styled.article`
   width: 100%;
-  height: 90vh;
+  height: 90vh; /* Navigation bar and Main Wrapper combined height should be 100vh */
   display: flex;
   flex-direction: column;
   padding-left: 1rem;
-  /* The hero image should not have right padding */
 
   & > * {
     flex-basis: 50%;
   }
 
   @media (min-width: 1440px) {
+    height: 80vh;
     flex-direction: row-reverse;
+    padding-left: 0;
   }
 `
 
 const HeroImage = styled.img`
+  /* This image should not have right padding */
   object-position: 0 100%; /* Crop the right part */
 `
 

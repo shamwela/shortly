@@ -7,7 +7,7 @@ import Logo from './Logo'
 
 const StyledNavigationBar = styled.nav`
   width: 100%;
-  height: 10vh;
+  height: 10vh; /* Navigation bar and Main Wrapper combined height should be 100vh */
   display: flex;
   justify-content: space-between;
   align-items: center;
