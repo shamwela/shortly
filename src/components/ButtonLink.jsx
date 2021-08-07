@@ -2,9 +2,10 @@ import styled from 'styled-components'
 import '../styles/variables.css'
 
 const ButtonLink = styled.a`
-  background-color: var(--cyan);
+  display: inline-block;
   border-radius: 100px;
-  padding: 0.5em 0.6em;
+  background-color: var(--cyan);
+  padding: 0.556em 1.667em;
   text-align: center;
   color: #fff !important;
 `
