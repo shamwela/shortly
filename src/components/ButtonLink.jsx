@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import '../styles/variables.css'
+import '../utils/variables.css'
 
 const ButtonLink = styled.a`
   display: inline-block;

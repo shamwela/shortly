@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import MenuIcon from './MenuIcon'
-import '../styles/variables.css'
+import '../utils/variables.css'
 import LinksWrapper from './LinksWrapper'
 import Logo from './Logo'
 

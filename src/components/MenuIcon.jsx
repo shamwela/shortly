@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import '../styles/variables.css'
+import '../utils/variables.css'
 
 const StyledMenuIcon = styled.div`
   cursor: pointer;

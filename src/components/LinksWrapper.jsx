@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ButtonLink from './ButtonLink'
-import '../styles/variables.css'
+import '../utils/variables.css'
 
 const StyledLinksWrapper = styled.div`
   position: absolute;
