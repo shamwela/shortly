@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import illustration from '../assets/illustration-working.svg'
-import H1 from './H1'
-import P from './P'
 import ButtonLink from './ButtonLink'
 
 const MainWrapper = styled.article`
@@ -48,11 +46,11 @@ export default function Intro() {
     <MainWrapper>
       <HeroImage src={illustration} alt='A person working using a computer' />
       <TextWrapper>
-        <H1>More than just shorter links</H1>
-        <P>
+        <h1>More than just shorter links</h1>
+        <p>
           Build your brand’s recognition and get detailed insights on how your
           links are performing.
-        </P>
+        </p>
         <ButtonLink href='/'>Get Started</ButtonLink>
       </TextWrapper>
     </MainWrapper>
