@@ -3,6 +3,7 @@ import '../utils/variables.css'
 
 const ButtonLink = styled.a`
   display: inline-block;
+  max-width: max-content;
   border-radius: 100px;
   background-color: var(--cyan);
   padding: 0.556em 1.667em;
