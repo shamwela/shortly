@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import illustration from '../assets/illustration-working.svg'
-import ButtonLink from './ButtonLink'
+import Button from './Button'
 
 const MainWrapper = styled.article`
   width: 100%;
@@ -51,7 +51,7 @@ export default function Intro() {
           Build your brand’s recognition and get detailed insights on how your
           links are performing.
         </p>
-        <ButtonLink href='/'>Get Started</ButtonLink>
+        <Button>Get Started</Button>
       </TextWrapper>
     </MainWrapper>
   )

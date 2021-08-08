@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import ButtonLink from './ButtonLink'
+import Button from './Button'
 import MobileBackground from '../assets/bg-shorten-mobile.svg'
 import '../utils/variables.css'
 
@@ -32,7 +32,7 @@ const Input = styled.input`
   padding: 0.5rem 1rem;
 `
 
-const SubmitButton = styled(ButtonLink)``
+const SubmitButton = styled(Button)``
 
 export default function InputSection() {
   return (

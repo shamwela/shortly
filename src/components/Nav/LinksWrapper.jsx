@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import ButtonLink from '../ButtonLink'
+import Button from '../Button'
 import '../../utils/variables.css'
 
 const StyledLinksWrapper = styled.div`
@@ -51,7 +51,7 @@ const SeparatorLine = styled.hr`
   }
 `
 
-const SignUpLink = styled(ButtonLink)`
+const SignUpButton = styled(Button)`
   align-self: stretch;
 `
 
@@ -63,7 +63,7 @@ export default function LinksWrapper({ menuOpened }) {
       <a href='/'>Resources</a>
       <SeparatorLine />
       <a href='/'>Login</a>
-      <SignUpLink href='/'>Sign Up</SignUpLink>
+      <SignUpButton>Sign Up</SignUpButton>
     </StyledLinksWrapper>
   )
 }
