@@ -8,16 +8,16 @@ const MainWrapper = styled.article`
   height: 90vh; /* Navigation bar and Main Wrapper combined height should be 100vh */
   display: flex;
   flex-direction: column;
-  padding-left: 1rem;
+  margin-bottom: 1rem;
 
   & > * {
-    flex-basis: 50%;
+    flex-grow: 1;
   }
 
   @media (min-width: 1440px) {
     height: 80vh;
     flex-direction: row-reverse;
-    padding-left: 0;
+    column-gap: 1rem;
   }
 `
 
@@ -32,12 +32,12 @@ const TextWrapper = styled.section`
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
-  padding-right: 1rem;
 
   @media (min-width: 1440px) {
-    padding: 8rem 5rem;
+    justify-content: center;
     align-items: flex-start;
     text-align: left;
+    row-gap: 1.2rem;
   }
 `
 

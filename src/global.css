@@ -29,6 +29,10 @@ img {
   object-fit: cover;
 }
 
+input {
+  border: 0;
+}
+
 @media (min-width: 1440px) {
   h1 {
     font-size: 4rem;
