@@ -17,7 +17,6 @@ const Wrapper = styled.div`
   padding: 1.5rem;
 
   & > * {
-    width: 100%;
     border-radius: ${borderRadius};
   }
 
@@ -29,16 +28,15 @@ const Wrapper = styled.div`
 `
 
 const Input = styled.input`
+  flex-grow: 1;
   padding: 0.5rem 1rem;
 `
-
-const SubmitButton = styled(Button)``
 
 export default function InputSection() {
   return (
     <Wrapper>
       <Input placeholder='Shorten a link here...' />
-      <SubmitButton>Shorten it!</SubmitButton>
+      <Button>Shorten it!</Button>
     </Wrapper>
   )
 }

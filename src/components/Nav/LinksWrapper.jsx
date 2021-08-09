@@ -52,7 +52,7 @@ const SeparatorLine = styled.hr`
 `
 
 const SignUpButton = styled(Button)`
-  align-self: stretch;
+
 `
 
 export default function LinksWrapper({ menuOpened }) {

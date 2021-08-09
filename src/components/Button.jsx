@@ -3,7 +3,7 @@ import '../utils/variables.css'
 
 const ButtonLink = styled.button`
   display: inline-block;
-  max-width: max-content;
+  width: 100%;
   border: 0;
   border-radius: 100px;
   background-color: var(--cyan);
@@ -11,6 +11,10 @@ const ButtonLink = styled.button`
   text-align: center;
   color: #fff !important;
   cursor: pointer;
+
+  @media (min-width: 1440px) {
+    width: max-content;
+  }
 `
 
 export default ButtonLink

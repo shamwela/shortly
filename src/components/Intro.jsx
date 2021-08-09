@@ -41,6 +41,10 @@ const TextWrapper = styled.section`
   }
 `
 
+const CallToActionButton = styled(Button)`
+  width: max-content;
+`
+
 export default function Intro() {
   return (
     <MainWrapper>
@@ -51,7 +55,7 @@ export default function Intro() {
           Build your brand’s recognition and get detailed insights on how your
           links are performing.
         </p>
-        <Button>Get Started</Button>
+        <CallToActionButton>Get Started</CallToActionButton>
       </TextWrapper>
     </MainWrapper>
   )
