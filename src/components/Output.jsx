@@ -2,10 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Button from './Button'
+import '../utils/variables.css'
 
 const StyledOutput = styled.div`
   margin-bottom: 1rem;
   width: 100%;
+  border-radius: var(--border-radius);
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -25,11 +27,15 @@ const LongLink = styled.span`
 `
 
 export default function Output({ longLink, shortLink }) {
+  const handleCopy = () => {
+    navigator.clipboard.writeText(shortLink)
+  }
+
   return (
     <StyledOutput>
       <LongLink>{longLink}</LongLink>
       <span>{shortLink}</span>
-      <Button>Copy</Button>
+      <Button onClick={handleCopy}>Copy</Button>
     </StyledOutput>
   )
 }

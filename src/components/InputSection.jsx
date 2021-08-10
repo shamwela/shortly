@@ -6,12 +6,9 @@ import MobileBackground from '../assets/bg-shorten-mobile.svg'
 import DesktopBackground from '../assets/bg-shorten-desktop.svg'
 import '../utils/variables.css'
 
-const borderRadius = '0.5rem'
-// This is not put in variables.css because it is not used in any other component
-
 const InputWrapper = styled.div`
   width: 100%;
-  border-radius: ${borderRadius};
+  border-radius: var(--border-radius);
   background: var(--dark-violet) url(${MobileBackground}) no-repeat right top;
   display: flex;
   flex-direction: column;
@@ -20,7 +17,7 @@ const InputWrapper = styled.div`
   margin-bottom: 1rem;
 
   & > * {
-    border-radius: ${borderRadius};
+    border-radius: var(--border-radius);
   }
 
   @media (min-width: 1440px) {
@@ -62,10 +59,13 @@ export default function InputSection() {
     }
 
     const responseObject = await response.json()
-    const { original_link, short_link } = responseObject.result
+    const { original_link, full_short_link } = responseObject.result
 
     setLongLinks((previousLongLinks) => [...previousLongLinks, original_link])
-    setShortLinks((previousShortLinks) => [...previousShortLinks, short_link])
+    setShortLinks((previousShortLinks) => [
+      ...previousShortLinks,
+      full_short_link,
+    ])
   }
 
   return (
