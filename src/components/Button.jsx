@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import '../utils/variables.css'
 
-const ButtonLink = styled.button`
+const Button = styled.button`
   display: inline-block;
   width: 100%;
   border: 0;
@@ -21,4 +21,4 @@ const ButtonLink = styled.button`
   }
 `
 
-export default ButtonLink
+export default Button
