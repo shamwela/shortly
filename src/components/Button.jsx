@@ -12,6 +12,10 @@ const ButtonLink = styled.button`
   color: #fff !important;
   cursor: pointer;
 
+  &:disabled {
+    cursor: not-allowed;
+  }
+
   @media (min-width: 1440px) {
     width: max-content;
   }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Button from './Button'
 import MobileBackground from '../assets/bg-shorten-mobile.svg'
@@ -32,11 +32,48 @@ const Input = styled.input`
   padding: 0.5rem 1rem;
 `
 
+const Error = styled.span`
+  color: var(--red);
+`
+
+const apiUrl = 'https://api.shrtco.de/v2/shorten'
+
 export default function InputSection() {
+  const [longLink, setLongLink] = useState('http://google.com')
+  const [shortLink, setShortLink] = useState('')
+  const [error, setError] = useState('')
+
+  const handleChange = ({ currentTarget }) => {
+    // validate here
+    setLongLink(currentTarget.value)
+  }
+
+  const handleSubmit = async () => {
+    setError('')
+
+    const finalUrl = `${apiUrl}?url=${longLink}`
+    const response = await fetch(finalUrl)
+    if (!response.ok) {
+      setError('The link you entered is invalid.')
+      return
+    }
+
+    const responseObject = await response.json()
+    setShortLink(responseObject.result.short_link)
+  }
+
   return (
     <Wrapper>
-      <Input placeholder='Shorten a link here...' />
-      <Button>Shorten it!</Button>
+      <Input
+        value={longLink}
+        onChange={handleChange}
+        placeholder='Shorten a link here...'
+      />
+      <Error>{error}</Error>
+      <Button disabled={longLink === ''} onClick={handleSubmit}>
+        Shorten it!
+      </Button>
+      <p>{shortLink}</p>
     </Wrapper>
   )
 }
