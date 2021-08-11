@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import NavigationBar from '../components/Nav/NavigationBar'
 import Intro from '../components/Intro'
-import InputSection from '../components/InputSection'
+import InputOutputSection from '../components/InputOutputSection'
 
 const Main = styled.main`
   /* Since Navigation Bar's left and right paddings are 5rem */
@@ -20,7 +20,7 @@ export default function Shortly() {
 
       <Main>
         <Intro />
-        <InputSection />
+        <InputOutputSection />
       </Main>
     </>
   )

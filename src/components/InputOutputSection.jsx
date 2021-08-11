@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import Error from './Error'
 import Button from './Button'
 import Output from './Output'
-import Error from './Error'
 import MobileBackground from '../assets/bg-shorten-mobile.svg'
 import DesktopBackground from '../assets/bg-shorten-desktop.svg'
 import '../utils/variables.css'
@@ -34,8 +34,8 @@ const Input = styled.input`
   padding: 0.5rem 1rem;
 `
 
-export default function InputSection() {
-  const [longLink, setLongLink] = useState('http://google.com')
+export default function InputOutputSection() {
+  const [longLink, setLongLink] = useState('')
   const [longLinks, setLongLinks] = useState([])
   const [shortLinks, setShortLinks] = useState([])
   const [error, setError] = useState('')
@@ -55,14 +55,11 @@ export default function InputSection() {
       return
     }
 
-    const responseObject = await response.json()
-    const { original_link, full_short_link } = responseObject.result
+    const { result } = await response.json()
+    const { original_link, short_link } = result
 
     setLongLinks((previousLongLinks) => [...previousLongLinks, original_link])
-    setShortLinks((previousShortLinks) => [
-      ...previousShortLinks,
-      full_short_link,
-    ])
+    setShortLinks((previousShortLinks) => [...previousShortLinks, short_link])
   }
 
   return (

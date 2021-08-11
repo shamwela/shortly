@@ -11,7 +11,7 @@ const StyledOutput = styled.div`
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  background-color: gray;
+  background-color: white;
 
   @media (min-width: 1440px) {
     flex-direction: row;
@@ -26,6 +26,10 @@ const LongLink = styled.span`
   }
 `
 
+const ShortLink = styled.span`
+  color: var(--cyan);
+`
+
 export default function Output({ longLink, shortLink }) {
   const handleCopy = () => {
     navigator.clipboard.writeText(shortLink)
@@ -34,7 +38,7 @@ export default function Output({ longLink, shortLink }) {
   return (
     <StyledOutput>
       <LongLink>{longLink}</LongLink>
-      <span>{shortLink}</span>
+      <ShortLink>{shortLink}</ShortLink>
       <Button onClick={handleCopy}>Copy</Button>
     </StyledOutput>
   )

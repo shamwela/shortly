@@ -13,6 +13,7 @@ const Button = styled.button`
   cursor: pointer;
 
   &:disabled {
+    background-color: var(--gray);
     cursor: not-allowed;
   }
 
