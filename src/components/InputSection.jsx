@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Button from './Button'
 import Output from './Output'
+import Error from './Error'
 import MobileBackground from '../assets/bg-shorten-mobile.svg'
 import DesktopBackground from '../assets/bg-shorten-desktop.svg'
 import '../utils/variables.css'
@@ -31,10 +32,6 @@ const InputWrapper = styled.div`
 const Input = styled.input`
   flex-grow: 1;
   padding: 0.5rem 1rem;
-`
-
-const Error = styled.span`
-  color: var(--red);
 `
 
 export default function InputSection() {
@@ -76,7 +73,7 @@ export default function InputSection() {
           onChange={handleChange}
           placeholder='Shorten a link here...'
         />
-        <Error>{error}</Error>
+        <Error message={error} />
         <Button disabled={longLink === ''} onClick={handleSubmit}>
           Shorten it!
         </Button>
