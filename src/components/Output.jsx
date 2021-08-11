@@ -11,6 +11,7 @@ const StyledOutput = styled.div`
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  row-gap: 1rem;
   background-color: white;
 
   @media (min-width: 1440px) {
