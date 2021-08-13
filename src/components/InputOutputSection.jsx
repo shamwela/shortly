@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Error from './Error'
 import Button from './Button'
@@ -35,9 +35,22 @@ const Input = styled.input`
 `
 
 export default function InputOutputSection() {
+  const useStickyState = (defaultValue, key) => {
+    const [value, setValue] = React.useState(() => {
+      const stickyValue = window.localStorage.getItem(key)
+      return stickyValue !== null ? JSON.parse(stickyValue) : defaultValue
+    })
+
+    React.useEffect(() => {
+      window.localStorage.setItem(key, JSON.stringify(value))
+    }, [key, value])
+
+    return [value, setValue]
+  }
+
   const [longLink, setLongLink] = useState('')
-  const [longLinks, setLongLinks] = useState([])
-  const [shortLinks, setShortLinks] = useState([])
+  const [longLinks, setLongLinks] = useStickyState([], 'longLinks')
+  const [shortLinks, setShortLinks] = useStickyState([], 'shortLinks')
   const [error, setError] = useState('')
 
   const handleChange = ({ currentTarget }) => {
