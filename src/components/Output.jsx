@@ -6,6 +6,7 @@ import '../utils/variables.css'
 
 const StyledOutput = styled.div`
   margin-bottom: 1rem;
+  border: 2px solid black;
   width: 100%;
   border-radius: var(--border-radius);
   padding: 1rem;
