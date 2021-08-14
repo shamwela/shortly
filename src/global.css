@@ -20,6 +20,14 @@ h1 {
   line-height: 1.1;
 }
 
+h2 {
+  font-size: 1.75rem;
+}
+
+p {
+  max-width: 50ch; /* For readability */
+}
+
 a {
   text-decoration: none;
 }

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 const StyledFeatureOverview = styled.div`
   display: grid;
+  justify-items: center;
   grid-row-gap: 1em;
   margin-bottom: 5rem;
 
