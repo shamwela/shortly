@@ -9,11 +9,19 @@ const StyledFeatureInfo = styled.div`
   display: grid;
   justify-items: center;
   grid-row-gap: 1em;
-  padding: 3rem 2rem 2rem 2rem;
+  padding: 3.5rem 2rem 2rem 2rem; /* The left padding should be the same as IconWrapper's left value */
   position: relative;
 
   & > * {
     text-align: center;
+  }
+
+  @media (min-width: 1440px) {
+    justify-items: start;
+
+    & > * {
+      text-align: left;
+    }
   }
 `
 
@@ -26,6 +34,10 @@ const IconWrapper = styled.div`
   padding: 1.2rem;
   position: absolute;
   top: -44px;
+
+  @media (min-width: 1440px) {
+    left: 2rem; /* This should be the same as StyledFeatureInfo's left padding */
+  }
 `
 
 export default function FeatureInfo({ imageSource, title, description }) {

@@ -5,6 +5,10 @@ const StyledFeatureOverview = styled.div`
   display: grid;
   grid-row-gap: 1em;
   margin-bottom: 5rem;
+
+  & > * {
+    text-align: center;
+  }
 `
 
 export default function FeatureOverview() {

@@ -20,7 +20,11 @@ const StyledFeatureSection = styled.div`
 const FeatureInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 1rem;
+  gap: 5rem;
+
+  @media (min-width: 1440px) {
+    flex-direction: row;
+  }
 `
 
 export default function FeatureSection() {
@@ -32,6 +36,20 @@ export default function FeatureSection() {
           imageSource={BrandRecognition}
           title='Brand Recognition'
           description='Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.'
+        />
+
+        <FeatureInfo
+          imageSource={DetailedRecords}
+          title='Detailed Records'
+          description='Gain insights into who is clicking your links. Knowing when and where 
+          people engage with your content helps inform better decisions.'
+        />
+
+        <FeatureInfo
+          imageSource={FullyCustomizable}
+          title='Fully Customizable'
+          description='Improve brand awareness and content discoverability through customizable 
+          links, supercharging audience engagement.'
         />
       </FeatureInfoWrapper>
     </StyledFeatureSection>
