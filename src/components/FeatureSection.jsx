@@ -28,14 +28,11 @@ export default function FeatureSection() {
     <StyledFeatureSection>
       <FeatureOverview />
       <FeatureInfoWrapper>
-        <FeatureInfo>
-          <img src={BrandRecognition} />
-          <h3>Brand Recognition</h3>
-          <p>
-            Boost your brand recognition with each click. Generic links don’t
-            mean a thing. Branded links help instil confidence in your content.
-          </p>
-        </FeatureInfo>
+        <FeatureInfo
+          imageSource={BrandRecognition}
+          title='Brand Recognition'
+          description='Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.'
+        />
       </FeatureInfoWrapper>
     </StyledFeatureSection>
   )
