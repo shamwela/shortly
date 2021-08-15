@@ -8,7 +8,7 @@ import Instagram from '../../assets/icon-instagram.svg'
 import '../../utils/variables.css'
 
 const Wrapper = styled.footer`
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--very-dark-violet);
   display: grid;
   justify-content: center;
@@ -17,6 +17,7 @@ const Wrapper = styled.footer`
   align-items: center;
   text-align: center;
   grid-gap: 3rem;
+  padding: 1rem;
 
   & * {
     font-size: 0.8rem;
@@ -24,7 +25,7 @@ const Wrapper = styled.footer`
   }
 
   @media (min-width: 1440px) {
-    height: 40vh;
+    min-height: 40vh;
     padding: 2rem 5rem;
     grid-template-columns: 3fr 1fr 1fr 1fr 2fr;
     justify-items: start;
