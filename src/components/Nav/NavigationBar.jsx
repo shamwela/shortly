@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import MenuIcon from './MenuIcon'
 import '../../utils/variables.css'
 import LinksWrapper from './LinksWrapper'
-import Logo from './Logo'
+import Logo from '../Logo'
 
 const StyledNavigationBar = styled.nav`
   width: 100%;
@@ -25,7 +25,10 @@ export default function NavigationBar() {
 
   return (
     <StyledNavigationBar>
-      <Logo />
+      {/* Reset line height to center vertically */}
+      <a href='/' style={{ lineHeight: '0' }}>
+        <Logo color='dark' />
+      </a>
       <MenuIcon onClick={() => setMenuOpened(!menuOpened)} />
       <LinksWrapper menuOpened={menuOpened} />
     </StyledNavigationBar>

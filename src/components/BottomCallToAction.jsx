@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import Button from './Button'
 import MobileBackground from '../assets/bg-boost-mobile.svg'
 import DesktopBackground from '../assets/bg-boost-desktop.svg'
 import '../utils/variables.css'
-import Button from './Button'
 
 const Wrapper = styled.div`
   min-height: 30vh;
