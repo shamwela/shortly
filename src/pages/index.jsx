@@ -5,7 +5,7 @@ import Intro from '../components/Intro'
 import InputOutputSection from '../components/InputOutputSection'
 import FeatureSection from '../components/FeatureSection'
 import BottomCallToAction from '../components/BottomCallToAction'
-import Footer from '../components/Footer'
+import Footer from '../components/Footer/Footer'
 
 const Main = styled.main`
   /* Since Navigation Bar's left and right paddings are 5rem */
