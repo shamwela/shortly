@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Shortly from './pages'
+import Shortly from './pages/index'
 import './global.css'
 
 ReactDOM.render(
