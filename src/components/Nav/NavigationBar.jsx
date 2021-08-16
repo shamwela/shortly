@@ -26,7 +26,7 @@ export default function NavigationBar() {
   return (
     <StyledNavigationBar>
       {/* Reset line height to center vertically */}
-      <a href='/' style={{ lineHeight: '0' }}>
+      <a href='/' aria-label='Go to home page' style={{ lineHeight: '0' }}>
         <Logo color='dark' />
       </a>
       <MenuIcon onClick={() => setMenuOpened(!menuOpened)} />
