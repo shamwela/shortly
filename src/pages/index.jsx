@@ -7,7 +7,7 @@ import FeatureSection from '../components/FeatureSection'
 import BottomCallToAction from '../components/BottomCallToAction'
 import Footer from '../components/Footer/Footer'
 
-const Main = styled.main`
+const Wrapper = styled.div`
   /* Since Navigation Bar's left and right paddings are 5rem */
   padding: 0 1rem 2rem 1rem;
 
@@ -21,10 +21,10 @@ export default function Shortly() {
     <>
       <NavigationBar />
 
-      <Main>
+      <Wrapper>
         <Intro />
         <InputOutputSection />
-      </Main>
+      </Wrapper>
       <FeatureSection />
       <BottomCallToAction />
       <Footer />
