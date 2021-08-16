@@ -56,18 +56,21 @@ export default function Footer() {
   return (
     <Wrapper>
       <Logo color='light' />
+
       <LinksWrapper>
         <Title>Features</Title>
         <Link href='/'>Link Shortening</Link>
         <Link href='/'>Branded Links</Link>
         <Link href='/'>Analytics</Link>
       </LinksWrapper>
+
       <LinksWrapper>
         <Title>Resources</Title>
         <Link href='/'>Blog</Link>
         <Link href='/'>Developers</Link>
         <Link href='/'>Support</Link>
       </LinksWrapper>
+
       <LinksWrapper>
         <Title>Company</Title>
         <Link href='/'>About</Link>
@@ -75,6 +78,7 @@ export default function Footer() {
         <Link href='/'>Careers</Link>
         <Link href='/'>Contact</Link>
       </LinksWrapper>
+
       <LogoWrapper>
         <a href='/'>
           <img src={Facebook} alt='Facebook' />
