@@ -21,12 +21,15 @@ export default function Shortly() {
     <>
       <NavigationBar />
 
-      <Wrapper>
-        <Intro />
-        <InputOutputSection />
-      </Wrapper>
-      <FeatureSection />
-      <BottomCallToAction />
+      <main>
+        <Wrapper>
+          <Intro />
+          <InputOutputSection />
+        </Wrapper>
+        <FeatureSection />
+        <BottomCallToAction />
+      </main>
+
       <Footer />
     </>
   )
