@@ -21,7 +21,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/create-react-app-with-jsx-and-styledcomponents-XcB1omTLf](https://www.frontendmentor.io/solutions/create-react-app-with-jsx-and-styledcomponents-XcB1omTLf)
 - Live Site URL: [https://shamwela-shortly.netlify.app](https://shamwela-shortly.netlify.app)
 
 ## My process
