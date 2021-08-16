@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import illustration from '../assets/illustration-working.svg'
 import Button from './Button'
 
-const MainWrapper = styled.article`
+const MainWrapper = styled.div`
   width: 100%;
   height: 90vh; /* Navigation bar and Main Wrapper combined height should be 100vh */
   display: flex;
