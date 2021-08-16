@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
 import Error from './Error'
 import Button from './Button'
@@ -34,6 +34,11 @@ const Input = styled.input`
   padding: 0.5rem 1rem;
 `
 
+const Note = styled.div`
+  text-align: center;
+  margin-bottom: 1rem;
+`
+
 export default function InputOutputSection() {
   const useStickyState = (defaultValue, key) => {
     const [value, setValue] = useState(() => {
@@ -48,15 +53,10 @@ export default function InputOutputSection() {
     return [value, setValue]
   }
 
-  const [longLink, setLongLink] = useState('')
+  const longLink = useRef(null)
   const [longLinks, setLongLinks] = useStickyState([], 'longLinks')
   const [shortLinks, setShortLinks] = useStickyState([], 'shortLinks')
   const [error, setError] = useState('')
-
-  const handleChange = ({ currentTarget }) => {
-    // validate here
-    setLongLink(currentTarget.value)
-  }
 
   const handleSubmit = async () => {
     setError('')
@@ -78,16 +78,16 @@ export default function InputOutputSection() {
   return (
     <>
       <InputWrapper>
-        <Input
-          value={longLink}
-          onChange={handleChange}
-          placeholder='Shorten a link here...'
-        />
+        <Input ref={longLink} placeholder='Shorten a link here...' />
         <Error message={error} />
         <Button disabled={longLink === ''} onClick={handleSubmit}>
           Shorten it!
         </Button>
       </InputWrapper>
+
+      <Note>
+        <strong>Note</strong>: Shortening a link takes about 30 seconds.
+      </Note>
 
       {shortLinks.map((shortLink, index) => (
         <Output
