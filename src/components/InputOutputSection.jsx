@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Error from './Error'
 import Button from './Button'
@@ -53,16 +53,20 @@ export default function InputOutputSection() {
     return [value, setValue]
   }
 
-  const longLink = useRef(null)
+  const [longLink, setLongLink] = useState('')
   const [longLinks, setLongLinks] = useStickyState([], 'longLinks')
   const [shortLinks, setShortLinks] = useStickyState([], 'shortLinks')
   const [error, setError] = useState('')
 
+  const handleChange = ({ currentTarget }) => {
+    setLongLink(currentTarget.value)
+  }
+
   const handleSubmit = async () => {
     setError('')
 
-    const finalUrl = 'https://api.shrtco.de/v2/shorten?url=' + longLink
-    const response = await fetch(finalUrl)
+    const apiEndpoint = 'https://api.shrtco.de/v2/shorten?url=' + longLink
+    const response = await fetch(apiEndpoint)
     if (!response.ok) {
       setError('The link you entered is invalid.')
       return
@@ -78,7 +82,11 @@ export default function InputOutputSection() {
   return (
     <>
       <InputWrapper>
-        <Input ref={longLink} placeholder='Shorten a link here...' />
+        <Input
+          value={longLink}
+          onChange={handleChange}
+          placeholder='Shorten a link here...'
+        />
         <Error message={error} />
         <Button disabled={longLink === ''} onClick={handleSubmit}>
           Shorten it!
