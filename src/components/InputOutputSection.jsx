@@ -17,7 +17,7 @@ const InputWrapper = styled.div`
   padding: 1.5rem;
   margin-bottom: 1rem;
 
-  & > * {
+  & * {
     border-radius: var(--border-radius);
   }
 
@@ -29,9 +29,17 @@ const InputWrapper = styled.div`
   }
 `
 
-const Input = styled.input`
+const Wrapper = styled.div`
   flex-grow: 1;
-  padding: 0.5rem 1rem;
+`
+
+const Input = styled.input`
+  width: 100%;
+  padding: 0.556em 1rem;
+`
+
+const SubmitButton = styled(Button)`
+  align-self: flex-start;
 `
 
 const Note = styled.div`
@@ -82,15 +90,18 @@ export default function InputOutputSection() {
   return (
     <>
       <InputWrapper>
-        <Input
-          value={longLink}
-          onChange={handleChange}
-          placeholder='Shorten a link here...'
-        />
-        <Error message={error} />
-        <Button disabled={longLink === ''} onClick={handleSubmit}>
+        <Wrapper>
+          <Input
+            value={longLink}
+            onChange={handleChange}
+            placeholder='Shorten a link here...'
+          />
+          {error && <Error message={error} />}
+        </Wrapper>
+
+        <SubmitButton disabled={longLink === ''} onClick={handleSubmit}>
           Shorten it!
-        </Button>
+        </SubmitButton>
       </InputWrapper>
 
       <Note>
